@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/tile.dart';
+
 class InputScreen extends StatefulWidget {
   InputScreen({Key? key}) : super(key: key);
 
@@ -14,8 +16,37 @@ class _InputScreenState extends State<InputScreen> {
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
       ),
-      body: Center(
-        child: Text('Body text'),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    Tile(selected: true),
+                    Tile(),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Row(
+                  children: [
+                    Tile(),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Row(
+                  children: [
+                    Tile(),
+                    Tile(),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
